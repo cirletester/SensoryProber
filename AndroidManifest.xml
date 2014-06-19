@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="list.extended.remote.sensor.prober"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="15"
+        android:targetSdkVersion="19" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <service android:name="list.extended.remote.sensor.services.Service_Linear_Acceleration" android:process=":LinearAcceleration">
+           <intent-filter>
+               <!-- This is an action code you can use to select the service
+                    without explicitly supplying the implementation class. -->
+               <action android:name="LINEAR_ACCELERATION" />
+               <action android:name="LINEAR_ACCELERATION_CONTROL" />
+               </intent-filter>
+       </service>
+       <service android:name="list.extended.remote.sensor.services.Service_Accelerometer" android:process=":Accelerometer">
+           <intent-filter>
+               <!-- This is an action code you can use to select the service
+                    without explicitly supplying the implementation class. -->
+               <action android:name="ACCELEROMETER" />
+               <action android:name="ACCELEROMETER_CONTROL" />               
+           </intent-filter>
+       </service>
+       <service android:name="list.extended.remote.sensor.services.Service_Gravity" android:process=":Gravity">
+           <intent-filter>
+               <!-- This is an action code you can use to select the service
+                    without explicitly supplying the implementation class. -->
+               <action android:name="GRAVITY" />
+               <action android:name="GRAVITY_CONTROL" />               
+           </intent-filter>
+       </service>
+       <service android:name="list.extended.remote.sensor.services.Service_Magnetic_Field" android:process=":Magnetic_Field">
+           <intent-filter>
+               <!-- This is an action code you can use to select the service
+                    without explicitly supplying the implementation class. -->
+               <action android:name="MAGNETIC_FIELD" />
+               <action android:name="MAGNETIC_FIELD_CONTROL" />               
+           </intent-filter>
+       </service>           
+       <service android:name="list.extended.remote.sensor.services.Service_Orientation" android:process=":Orientation">
+           <intent-filter>
+               <!-- This is an action code you can use to select the service
+                    without explicitly supplying the implementation class. -->
+               <action android:name="ORIENTATION" />
+               <action android:name="ORIENTATION_CONTROL" />               
+           </intent-filter>
+       </service> 
+       <service android:name="list.extended.remote.sensor.services.Service_Proximity" android:process=":Proximity">
+           <intent-filter>
+               <!-- This is an action code you can use to select the service
+                    without explicitly supplying the implementation class. -->
+               <action android:name="PROXIMITY" />
+               <action android:name="PROXIMITY_CONTROL" />               
+           </intent-filter>
+       </service>        
+       <service android:name="list.extended.remote.sensor.services.Service_Rotation_Vector" android:process=":Rotation_Vector">
+           <intent-filter>
+               <!-- This is an action code you can use to select the service
+                    without explicitly supplying the implementation class. -->
+               <action android:name="ROTATION_VECTOR" />
+               <action android:name="ROTATION_VECTOR_CONTROL" />               
+           </intent-filter>
+       </service>           
+       <service android:name="list.extended.remote.sensor.services.Service_Light" android:process=":Light">
+           <intent-filter>
+               <!-- This is an action code you can use to select the service
+                    without explicitly supplying the implementation class. -->
+               <action android:name="LIGHT" />
+               <action android:name="LIGHT_CONTROL" />               
+           </intent-filter>
+       </service>
+       <service android:name="list.extended.remote.sensor.services.Service_Gyroscope" android:process=":Gyroscope">
+           <intent-filter>
+               <!-- This is an action code you can use to select the service
+                    without explicitly supplying the implementation class. -->
+               <action android:name="GYROSCOPE" />
+               <action android:name="GYROSCOPE_CONTROL" />               
+           </intent-filter>
+       </service>       
+       <service android:name="list.extended.remote.sensor.services.Service_GPS" android:process=":GPS">
+           <intent-filter>
+               <!-- This is an action code you can use to select the service
+                    without explicitly supplying the implementation class. -->
+               <action android:name="GPS" />
+               <action android:name="GPS_CONTROL" />               
+           </intent-filter>
+       </service>
+       <service android:name="list.extended.remote.sensor.services.Service_Battery" android:process=":Battery">
+           <intent-filter>
+               <!-- This is an action code you can use to select the service
+                    without explicitly supplying the implementation class. -->
+               <action android:name="BATTERY" />
+               <action android:name="BATTERY_CONTROL" />               
+           </intent-filter>
+       </service>
+       <activity
+            android:label="@string/app_name"
+            android:name=".ListProberActivity"  
+        	android:screenOrientation="portrait">
+            <intent-filter >
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+</manifest>
